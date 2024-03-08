@@ -77,6 +77,7 @@ export default function Header() {
                         initial="initial"
                         whileInView="animate"
                         viewport={{ once: true }}
+                        className="rounded-lg shadow-lg shadow-slate-950"
                       />
                       <Link
                         to={location.path}

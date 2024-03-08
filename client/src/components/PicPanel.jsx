@@ -85,7 +85,7 @@ export default function PicPanel() {
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    className="h-full w-full object-cover object-center group-hover:opacity-75 hover:animate-pulse"
+                    className="h-full w-full object-cover object-center group-hover:opacity-75 hover:cursor-zoom-in"
                     onClick={() => handleImageClick(location)}
                   />
                 </div>
