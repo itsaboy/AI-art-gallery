@@ -1,9 +1,10 @@
 import { Fragment, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { LOCATIONS, STYLES } from "../data";
+import { LOCATIONS, STYLES, imageAnimationVariants } from "../data";
 import { AppContext } from "../AppContext";
 
 function classNames(...classes) {
@@ -66,13 +67,20 @@ export default function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 -translate-y-1"
             >
-              <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-slate-950 pt-14 shadow-lg ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
+              <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-slate-800 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
                 <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                   {LOCATIONS.map((location) => (
                     <div
                       key={location.id}
                       className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-slate-950"
                     >
+                      <motion.img
+                        src={location.img}
+                        variants={imageAnimationVariants}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                      />
                       <Link
                         to={location.path}
                         onClick={() => handleNewLocation(location.name)}
@@ -106,7 +114,7 @@ export default function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 -translate-y-1"
             >
-              <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-slate-950 pt-14 shadow-lg ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
+              <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-slate-800 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
                 <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                   {STYLES.map((style) => (
                     <div
