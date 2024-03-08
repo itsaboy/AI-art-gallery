@@ -17,16 +17,15 @@ const imageAnimationVariants = {
     scale: 0.8,
     y: 20,
   },
-  animate: (i) => ({
+  animate: {
     opacity: 1,
     scale: 1,
     y: 0,
     transition: {
       duration: 0.3,
       ease: "easeInOut",
-      delay: 0.1 * i,
     },
-  }),
+  },
 };
 
 export default function PicPanel() {
@@ -78,20 +77,19 @@ export default function PicPanel() {
         ) : (
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
             {currentImages.map((location, i) => (
-            <a key={location} className="group">
-              <div className="aspect-h-16 aspect-w-9 w-full overflow-hidden rounded-lg relative">
-                <motion.img
-                  src={location}
-                  variants={imageAnimationVariants}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                  className="h-full w-full object-cover object-center group-hover:opacity-75 hover:animate-pulse"
-                  onClick={() => handleImageClick(location)}
-                  custom={i}
-                />
-              </div>
-            </a>
+              <a key={location} className="group">
+                <div className="aspect-h-16 aspect-w-9 w-full overflow-hidden rounded-lg relative">
+                  <motion.img
+                    src={location}
+                    variants={imageAnimationVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    className="h-full w-full object-cover object-center group-hover:opacity-75 hover:animate-pulse"
+                    onClick={() => handleImageClick(location)}
+                  />
+                </div>
+              </a>
             ))}
           </div>
         )}
