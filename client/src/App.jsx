@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
   const [locationSelected, setLocationSelected] = useState(null);
   const [artStyleSelected, setArtStyleSelected] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [currentImages, setCurrentImages] = useState(null);
 
   const getImages = async (region) => {
@@ -16,7 +16,7 @@ function App() {
     const res = await fetch(req);
     const imageList = await res.json();
     setCurrentImages(imageList);
-    setIsLoading(true);
+    setIsLoading(false);
   };
 
   const handleNewLocation = (region) => {

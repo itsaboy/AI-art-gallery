@@ -5,6 +5,7 @@ import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { LOCATIONS, STYLES, imageAnimationVariants } from "../data";
+import logo from "../assets/logo.svg";
 import { AppContext } from "../AppContext";
 
 function classNames(...classes) {
@@ -25,11 +26,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
+            <img className="h-10 w-auto" src={logo} alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -161,11 +158,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+              <img className="h-10 w-auto" src={logo} alt="" />
             </a>
             <button
               type="button"

@@ -98,8 +98,8 @@ export default function Info() {
                   all cultures.
                 </p>
                 <p className="mt-8 text-base text-slate-200">
-                  [Website Name] is dedicated to exploring the potential of AI
-                  in art while upholding these ethical and moral principles. We
+                  NeuralCanvas is dedicated to exploring the potential of AI in
+                  art while upholding these ethical and moral principles. We
                   invite our visitors to join us in this journey, embracing
                   innovation with a conscientious and respectful approach
                   towards the future of creativity.
