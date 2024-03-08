@@ -34,11 +34,23 @@ const router = createBrowserRouter([
             element: <PicPanel />,
           },
           {
+            path: "/photos/italy",
+            element: <PicPanel />,
+          },
+          {
             path: "/photos/japan",
             element: <PicPanel />,
           },
           {
             path: "/photos/portugal",
+            element: <PicPanel />,
+          },
+          {
+            path: "/photos/qatar",
+            element: <PicPanel />,
+          },
+          {
+            path: "/photos/sweden",
             element: <PicPanel />,
           },
         ],
@@ -48,23 +60,15 @@ const router = createBrowserRouter([
         element: <ArtPanel />,
         children: [
           {
-            path: "/art/art1",
+            path: "/art/InkDrawing",
             element: <ArtPanel />,
           },
           {
-            path: "/art/art2",
+            path: "/art/Sumi",
             element: <ArtPanel />,
           },
           {
-            path: "/art/art3",
-            element: <ArtPanel />,
-          },
-          {
-            path: "/art/art4",
-            element: <ArtPanel />,
-          },
-          {
-            path: "/art/art5",
+            path: "/art/Suminagashi",
             element: <ArtPanel />,
           },
         ]
