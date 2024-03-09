@@ -32,7 +32,7 @@ function App() {
   }
 
   return (
-    <div className="body-container">
+    <div className="body-container bg-slate-900">
       <AppContext.Provider
         value={{
           locationSelected,
