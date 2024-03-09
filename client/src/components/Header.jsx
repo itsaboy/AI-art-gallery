@@ -82,7 +82,7 @@ export default function Header() {
                         className="rounded-lg shadow-lg shadow-slate-950"
                       />
                       <Link
-                        to={location.path}
+                        to="/photos"
                         onClick={() => handleNewLocation(location.name)}
                         className="mt-6 block font-semibold text-slate-300"
                       >
@@ -131,7 +131,7 @@ export default function Header() {
                         className="rounded-lg shadow-lg shadow-slate-950"
                       />
                       <Link
-                        to={style.path}
+                        to="/art"
                         onClick={() => handleNewArtStyle(style.name)}
                         className="mt-6 block font-semibold text-slate-300"
                       >
@@ -212,7 +212,7 @@ export default function Header() {
                             onClick={() => handleNewLocation(location.name)}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
                           >
-                            <Link to={location.path}>{location.name}</Link>
+                            <Link to="/photos">{location.name}</Link>
                           </Disclosure.Button>
                         ))}
                       </Disclosure.Panel>
@@ -240,7 +240,7 @@ export default function Header() {
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
                           >
                             <Link
-                              to={style.path}
+                              to="/art"
                               onClick={() => handleNewArtStyle(style.name)}
                             >
                               {style.name}

@@ -46,6 +46,8 @@ export default function PicPanel() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="sr-only">{artStyleSelected}</h2>
             <p className="mt-6 text-lg leading-8 text-slate-200">
+              {artStyleSelected === "None" &&
+                "Choose an art style from the Art dropdown"}
               {artStyleSelected === "Ink Drawing" &&
                 "The brush dances and the ink sings. - Japanese proverb"}
               {artStyleSelected === "Sumi" &&

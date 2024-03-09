@@ -50,6 +50,8 @@ export default function PicPanel() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="sr-only">{locationSelected}</h2>
             <p className="mt-6 text-lg leading-8 text-slate-200">
+              {locationSelected === "None" &&
+                "Choose a location from the Photos dropdown"}
               {locationSelected === "China" &&
                 "China is a sleeping giant. Let her sleep, for when she wakes she will move the world. - Napolean Bonaparte"}
               {locationSelected === "Colombia" &&

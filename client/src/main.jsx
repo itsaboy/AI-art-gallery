@@ -23,62 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/photos",
         element: <PicPanel />,
-        children: [
-          {
-            path: "/photos/china",
-            element: <PicPanel />,
-          },
-          {
-            path: "/photos/colombia",
-            element: <PicPanel />,
-          },
-          {
-            path: "/photos/ireland",
-            element: <PicPanel />,
-          },
-          {
-            path: "/photos/italy",
-            element: <PicPanel />,
-          },
-          {
-            path: "/photos/japan",
-            element: <PicPanel />,
-          },
-          {
-            path: "/photos/portugal",
-            element: <PicPanel />,
-          },
-          {
-            path: "/photos/qatar",
-            element: <PicPanel />,
-          },
-          {
-            path: "/photos/sweden",
-            element: <PicPanel />,
-          },
-        ],
       },
       {
         path: "/art",
         element: <ArtPanel />,
-        children: [
-          {
-            path: "/art/inkdrawing",
-            element: <ArtPanel />,
-          },
-          {
-            path: "/art/sumi",
-            element: <ArtPanel />,
-          },
-          {
-            path: "/art/suminagashi",
-            element: <ArtPanel />,
-          },
-          {
-            path: "/art/ukiyo",
-            element: <ArtPanel />,
-          },
-        ]
       },
       {
         path: "/info",

@@ -6,9 +6,9 @@ import { AppContext } from "./AppContext";
 import "./App.css";
 
 function App() {
-  const [locationSelected, setLocationSelected] = useState(null);
-  const [artStyleSelected, setArtStyleSelected] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [locationSelected, setLocationSelected] = useState("None");
+  const [artStyleSelected, setArtStyleSelected] = useState("None");
+  const [isLoading, setIsLoading] = useState(true);
   const [currentImages, setCurrentImages] = useState(null);
 
   const getImages = async (region) => {
