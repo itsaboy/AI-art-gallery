@@ -18,17 +18,19 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        errorElement: <Error />,
       },
       {
+        index: true,
         path: "/photos",
         element: <PicPanel />,
       },
       {
+        index: true,
         path: "/art",
         element: <ArtPanel />,
       },
       {
+        index: true,
         path: "/info",
         element: <Info />,
       },
@@ -38,6 +40,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

@@ -45,7 +45,7 @@ export default function PicPanel() {
   };
 
   return (
-    <div className="bg-slate-900">
+    <div className="bg-slate-900 py-24 mx-auto">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 py-6 lg:max-w-7xl lg:px-8">
         <div className="bg-slate-900 mb-6 px-6 py-24 sm:py-32 lg:px-8 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-80 rounded-lg">
           <div className="mx-auto max-w-2xl text-center">

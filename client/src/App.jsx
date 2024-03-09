@@ -23,16 +23,16 @@ function App() {
     setIsLoading(true);
     setLocationSelected(region);
     getImages(region);
-  }
+  };
 
   const handleNewArtStyle = (style) => {
     setIsLoading(true);
     setArtStyleSelected(style);
     getImages(style);
-  }
+  };
 
   return (
-    <div className="body-container bg-slate-900">
+    <>
       <AppContext.Provider
         value={{
           locationSelected,
@@ -47,12 +47,10 @@ function App() {
         }}
       >
         <Header />
-        <main className="bg-slate-900">
-          <Outlet />
-        </main>
+        <Outlet />
         <Footer />
       </AppContext.Provider>
-    </div>
+    </>
   );
 }
 
