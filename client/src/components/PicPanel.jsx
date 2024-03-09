@@ -6,10 +6,14 @@ import Clicked from "./Clicked";
 
 import { AppContext } from "../AppContext";
 
-import china from "../assets/china.webp";
-import colombia from "../assets/colombia.webp";
-import ireland from "../assets/ireland.webp";
-import japan from "../assets/japan.webp";
+import china from "./assets/china.webp";
+import colombia from "./assets/colombia.webp";
+import ireland from "./assets/ireland.webp";
+import italy from "./assets/italy.webp";
+import japan from "./assets/japan.webp";
+import portugal from "./assets/portugal.webp";
+import qatar from "./assets/qatar.webp";
+import sweden from "./assets/sweden.webp";
 
 const imageAnimationVariants = {
   initial: {
@@ -52,8 +56,16 @@ export default function PicPanel() {
                 "Colombia is the rhythm of the falling rain, the mystery of the misty mountains, and the eternal dream of the Caribbean sun. - Unknown"}
               {locationSelected === "Ireland" &&
                 "There is another world, but it is in this one. - William Butler Yeats"}
+              {locationSelected === "Italy" &&
+                "Italy is a dream that keeps returning for the rest of your life. - Anna Akhmatova"}
               {locationSelected === "Japan" &&
                 "Japan is a dream that you have been experiencing since you were born, that doesn't let go of you until you die. - Lafcadio Hearn"}
+              {locationSelected === "Portugal" &&
+                "Portugal is not a small country. It is a great country. - Salazar"}
+              {locationSelected === "Qatar" &&
+                "Qatar is a country that pushes the envelope of possibility. - Unknown"}
+              {locationSelected === "Sweden" &&
+                "Sweden, the middle way. - Marquis Childs"}
             </p>
             <img
               {...(locationSelected === "China" && {
@@ -65,8 +77,20 @@ export default function PicPanel() {
               {...(locationSelected === "Ireland" && {
                 src: ireland,
               })}
+              {...(locationSelected === "Italy" && {
+                src: italy,
+              })}
               {...(locationSelected === "Japan" && {
                 src: japan,
+              })}
+              {...(locationSelected === "Portugal" && {
+                src: portugal,
+              })}
+              {...(locationSelected === "Qatar" && {
+                src: qatar,
+              })}
+              {...(locationSelected === "Sweden" && {
+                src: sweden,
               })}
               className="absolute inset-0 -z-10 h-full w-full object-cover rounded-lg opacity-10"
             />

@@ -53,7 +53,7 @@ export const LOCATIONS = [
   {
     id: 8,
     name: "Sweden",
-    path: "/photos/swden",
+    path: "/photos/sweden",
     img: sweden,
   },
 ];
