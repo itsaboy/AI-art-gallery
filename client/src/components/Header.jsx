@@ -27,7 +27,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <div className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img className="h-10 w-auto" src={logo} alt="" />
+            <img className="h-10 w-auto" src={logo} alt="logo" />
           </div>
         </div>
         <div className="flex lg:hidden">
@@ -74,6 +74,7 @@ export default function Header() {
                     >
                       <motion.img
                         src={location.img}
+                        alt={location.alt}
                         variants={imageAnimationVariants}
                         initial="initial"
                         whileInView="animate"
@@ -122,6 +123,7 @@ export default function Header() {
                     >
                       <motion.img
                         src={style.img}
+                        alt={style.alt}
                         variants={imageAnimationVariants}
                         initial="initial"
                         whileInView="animate"
@@ -169,7 +171,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-10 w-auto" src={logo} alt="" />
+              <img className="h-10 w-auto" src={logo} alt="logo" />
             </a>
             <button
               type="button"

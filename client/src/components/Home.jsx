@@ -68,7 +68,7 @@ export default function Home() {
                   <div className="relative">
                     <img
                       src={home1}
-                      alt=""
+                      alt="a black and white painting of a woman"
                       className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-sm shadow-slate-400 hover:shadow-lg hover:shadow-slate-400 hover:scale-105 transition-all ease-in-out"
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -78,7 +78,7 @@ export default function Home() {
                   <div className="relative">
                     <img
                       src={home3}
-                      alt=""
+                      alt="a black and white photo of woman looking out a window"
                       className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-sm shadow-slate-400 hover:shadow-lg hover:shadow-slate-400 hover:scale-105 transition-all"
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -86,7 +86,7 @@ export default function Home() {
                   <div className="relative">
                     <img
                       src={home2}
-                      alt=""
+                      alt="expressionist graffiti on a building's wall"
                       className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-sm shadow-slate-400 hover:shadow-lg hover:shadow-slate-400 hover:scale-105 transition-all ease-in-out"
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -96,7 +96,7 @@ export default function Home() {
                   <div className="relative">
                     <img
                       src={home4}
-                      alt=""
+                      alt="a futuristic city"
                       className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-sm shadow-slate-400 hover:shadow-lg hover:shadow-slate-400 hover:scale-105 transition-all"
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -104,7 +104,7 @@ export default function Home() {
                   <div className="relative">
                     <img
                       src={home5}
-                      alt=""
+                      alt="a black and white noir photo of a car and a woman"
                       className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-sm shadow-slate-400 hover:shadow-lg hover:shadow-slate-400 hover:scale-105 transition-all"
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />

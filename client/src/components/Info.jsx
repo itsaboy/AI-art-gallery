@@ -1,3 +1,6 @@
+import robot from "../assets/robot.webp";
+import angryrobot from "../assets/angryrobot.svg";
+
 export default function Info() {
   return (
     <div className="bg-slate-900 py-24 sm:py-32">
@@ -7,8 +10,8 @@ export default function Info() {
             <div className="relative overflow-hidden rounded-3xl bg-slate-900 px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
               <img
                 className="absolute inset-0 h-full w-full object-cover brightness-125 saturate-0"
-                src="https://images.unsplash.com/photo-1630569267625-157f8f9d1a7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2669&q=80"
-                alt=""
+                src={robot}
+                alt="a scary robot"
               />
               <div className="absolute inset-0 bg-slate-900 mix-blend-multiply" />
               <div
@@ -36,23 +39,20 @@ export default function Info() {
                   />
                   <use href="#0ef284b8-28c2-426e-9442-8655d393522e" x={86} />
                 </svg>
-                <img
-                  src="https://tailwindui.com/img/logos/workcation-logo-white.svg"
-                  alt=""
-                  className="h-12 w-auto"
-                />
+                <img src={angryrobot} alt="icon of an angry robot" className="h-12 w-auto" />
                 <blockquote className="mt-6 text-xl font-semibold leading-8 text-white">
                   <p>
-                    “Amet amet eget scelerisque tellus sit neque faucibus non
-                    eleifend. Integer eu praesent at a. Ornare arcu gravida
-                    natoque erat et cursus tortor.”
+                    “We need to ensure that AI technology is developed with a
+                    strong ethical framework. It’s not enough to have AI systems
+                    that are technically excellent; they must also be beneficial
+                    to society and do no harm.”
                   </p>
                 </blockquote>
                 <figcaption className="mt-6 text-sm leading-6 text-gray-300">
                   <strong className="font-semibold text-white">
-                    Judith Rogers,
+                    Tim Berners-Lee,
                   </strong>{" "}
-                  CEO at Workcation
+                  inventor of the World Wide Web
                 </figcaption>
               </figure>
             </div>
