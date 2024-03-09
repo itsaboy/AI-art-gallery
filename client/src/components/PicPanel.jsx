@@ -6,14 +6,14 @@ import Clicked from "./Clicked";
 
 import { AppContext } from "../AppContext";
 
-import china from "./assets/china.webp";
-import colombia from "./assets/colombia.webp";
-import ireland from "./assets/ireland.webp";
-import italy from "./assets/italy.webp";
-import japan from "./assets/japan.webp";
-import portugal from "./assets/portugal.webp";
-import qatar from "./assets/qatar.webp";
-import sweden from "./assets/sweden.webp";
+import china from "../assets/china.webp";
+import colombia from "../assets/colombia.webp";
+import ireland from "../assets/ireland.webp";
+import italy from "../assets/italy.webp";
+import japan from "../assets/japan.webp";
+import portugal from "../assets/portugal.webp";
+import qatar from "../assets/qatar.webp";
+import sweden from "../assets/sweden.webp";
 
 const imageAnimationVariants = {
   initial: {
