@@ -6,6 +6,7 @@ import Clicked from "./Clicked";
 
 import { AppContext } from "../AppContext";
 
+import art from "../assets/art.webp";
 import inkDrawing from "../assets/inkDrawing.webp";
 import sumi from "../assets/sumi.webp";
 import suminagashi from "../assets/suminagashi.webp";
@@ -58,6 +59,9 @@ export default function PicPanel() {
                 "The essence of Ukiyo lies in finding joy in the temporary, seeing the profound beauty in the ephemeral nature of our lives. - Unknown"}
             </p>
             <img
+              {...(artStyleSelected === "None" && {
+                src: art,
+              })}
               {...(artStyleSelected === "Ink Drawing" && {
                 src: inkDrawing,
               })}

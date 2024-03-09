@@ -6,6 +6,7 @@ import Clicked from "./Clicked";
 
 import { AppContext } from "../AppContext";
 
+import photo from "../assets/photo.webp";
 import china from "../assets/china.webp";
 import colombia from "../assets/colombia.webp";
 import ireland from "../assets/ireland.webp";
@@ -70,6 +71,9 @@ export default function PicPanel() {
                 "Sweden, the middle way. - Marquis Childs"}
             </p>
             <img
+              {...(locationSelected === "None" && {
+                src: photo,
+              })}
               {...(locationSelected === "China" && {
                 src: china,
               })}
