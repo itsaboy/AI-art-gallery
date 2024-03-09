@@ -52,7 +52,7 @@ const generatePreSignedUrls = async (bucketName, imageKeys) => {
       });
 
       try {
-        const url = await getSignedUrl(s3Client, command, { expiresIn: 5 });
+        const url = await getSignedUrl(s3Client, command, { expiresIn: 30 });
         return url;
       } catch (error) {
         console.error("Error generating pre-signed URL:", error);
