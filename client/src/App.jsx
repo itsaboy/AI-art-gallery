@@ -11,23 +11,50 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [currentImages, setCurrentImages] = useState();
 
+  function handleLocationChange(newLocation) {
+    setPlayers((prevLocation) => {
+      return {
+        ...prevLocation,
+        locationSelected: newLocation,
+      };
+    });
+  }
+
+  function handleArtStyleChange(newArtStyle) {
+    setPlayers((prevArtStyle) => {
+      return {
+        ...prevArtStyle,
+        artStyleSelected: newArtStyle,
+      };
+    });
+  }
+
+  function handleImagesChange(newImages) {
+    setPlayers((prevImages) => {
+      return {
+        ...prevImages,
+        currentImages: newImages,
+      };
+    });
+  }
+
   const getImages = async (region) => {
     const req = `https://neuralcanvases.com/api/images?region=${region}`;
     const res = await fetch(req);
     const imageList = await res.json();
-    setCurrentImages(imageList);
+    handleImagesChange(imageList);
     setIsLoading(false);
   };
 
   const handleNewLocation = (region) => {
     setIsLoading(true);
-    setLocationSelected(region);
+    handleLocationChange(region);
     getImages(region);
   };
 
   const handleNewArtStyle = (style) => {
     setIsLoading(true);
-    setArtStyleSelected(style);
+    handleArtStyleChange(style);
     getImages(style);
   };
 
