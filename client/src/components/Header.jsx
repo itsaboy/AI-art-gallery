@@ -16,6 +16,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const { handleNewLocation } = useContext(AppContext);
+  const { handleNewArtStyle } = useContext(AppContext);
 
   return (
     <header className="relative isolate z-10 bg-slate-950">
@@ -114,21 +115,29 @@ export default function Header() {
             >
               <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-slate-800 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
                 <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
-                  {/* {STYLES.map((style) => (
+                  {STYLES.map((style) => (
                     <div
                       key={style.id}
                       className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-slate-950"
                     >
+                      <motion.img
+                        src={style.img}
+                        variants={imageAnimationVariants}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                        className="rounded-lg shadow-lg shadow-slate-950"
+                      />
                       <Link
                         to={style.path}
+                        onClick={() => handleNewArtStyle(style.name)}
                         className="mt-6 block font-semibold text-slate-300"
                       >
                         {style.name}
                         <span className="absolute inset-0" />
                       </Link>
                     </div>
-                  ))} */}
-                  <h3 className="text-slate-200 text-center">Coming soon!</h3>
+                  ))}
                 </div>
               </Popover.Panel>
             </Transition>
@@ -222,16 +231,20 @@ export default function Header() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {/* {[...STYLES].map((style) => (
+                        {[...STYLES].map((style) => (
                           <Disclosure.Button
                             key={style.id}
                             as="div"
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
                           >
-                            <Link to={style.path}>{style.name}</Link>
+                            <Link
+                              to={style.path}
+                              onClick={() => handleNewArtStyle(style.name)}
+                            >
+                              {style.name}
+                            </Link>
                           </Disclosure.Button>
-                        ))} */}
-                        <h3 className="text-slate-200">Coming soon!</h3>
+                        ))}
                       </Disclosure.Panel>
                     </>
                   )}

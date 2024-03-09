@@ -25,6 +25,12 @@ function App() {
     getImages(region);
   }
 
+  const handleNewArtStyle = (style) => {
+    setIsLoading(true);
+    setArtStyleSelected(style);
+    getImages(style);
+  }
+
   return (
     <div className="body-container">
       <AppContext.Provider
@@ -34,6 +40,7 @@ function App() {
           isLoading,
           currentImages,
           handleNewLocation,
+          handleNewArtStyle,
           setLocationSelected,
           setArtStyleSelected,
           setCurrentImages,

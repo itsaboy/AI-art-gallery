@@ -62,15 +62,19 @@ const router = createBrowserRouter([
         element: <ArtPanel />,
         children: [
           {
-            path: "/art/InkDrawing",
+            path: "/art/inkdrawing",
             element: <ArtPanel />,
           },
           {
-            path: "/art/Sumi",
+            path: "/art/sumi",
             element: <ArtPanel />,
           },
           {
-            path: "/art/Suminagashi",
+            path: "/art/suminagashi",
+            element: <ArtPanel />,
+          },
+          {
+            path: "/art/ukiyo",
             element: <ArtPanel />,
           },
         ]

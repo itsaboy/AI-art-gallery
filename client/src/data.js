@@ -7,6 +7,11 @@ import portugal from "./assets/portugal.webp";
 import qatar from "./assets/qatar.webp";
 import sweden from "./assets/sweden.webp";
 
+import inkDrawing from "./assets/inkDrawing.webp";
+import sumi from "./assets/sumi.webp";
+import suminagashi from "./assets/suminagashi.webp";
+import ukiyo from "./assets/ukiyo.webp";
+
 export const LOCATIONS = [
   {
     id: 1,
@@ -61,28 +66,27 @@ export const LOCATIONS = [
 export const STYLES = [
   {
     id: 1,
-    name: "Style 1",
-    path: "/art/art1",
+    name: "Ink Drawing",
+    path: "/art/inkdrawing",
+    img: inkDrawing,
   },
   {
     id: 2,
-    name: "Style 2",
-    path: "/art/art2",
+    name: "Sumi",
+    path: "/art/sumi",
+    img: sumi,
   },
   {
     id: 3,
-    name: "Style 3",
-    path: "/art/art3",
+    name: "Suminagashi",
+    path: "/art/suminagashi",
+    img: suminagashi,
   },
   {
     id: 4,
-    name: "Style 4",
-    path: "/art/art4",
-  },
-  {
-    id: 5,
-    name: "Style 5",
-    path: "/art/art5",
+    name: "Ukiyo",
+    path: "/art/ukiyo",
+    img: ukiyo,
   },
 ];
 
