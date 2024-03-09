@@ -206,10 +206,14 @@ export default function Header() {
                           <Disclosure.Button
                             key={location.id}
                             as="div"
-                            onClick={() => handleNewLocation(location.name)}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
                           >
-                            <Link to="/photos">{location.name}</Link>
+                            <Link
+                              to="/photos"
+                              onClick={() => handleNewLocation(location.name)}
+                            >
+                              {location.name}
+                            </Link>
                           </Disclosure.Button>
                         ))}
                       </Disclosure.Panel>
