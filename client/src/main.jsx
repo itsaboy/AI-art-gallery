@@ -6,12 +6,14 @@ import Home from "./components/Home.jsx";
 import PicPanel from "./components/PicPanel.jsx";
 import ArtPanel from "./components/ArtPanel.jsx";
 import Info from "./components/Info.jsx";
+import Error from "./components/Error.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
         index: true,

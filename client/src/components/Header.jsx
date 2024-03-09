@@ -24,10 +24,10 @@ export default function Header() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <div className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img className="h-10 w-auto" src={logo} alt="" />
-          </a>
+          </div>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -114,7 +114,7 @@ export default function Header() {
             >
               <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-slate-800 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
                 <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
-                  {STYLES.map((style) => (
+                  {/* {STYLES.map((style) => (
                     <div
                       key={style.id}
                       className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-slate-950"
@@ -127,7 +127,8 @@ export default function Header() {
                         <span className="absolute inset-0" />
                       </Link>
                     </div>
-                  ))}
+                  ))} */}
+                  <h3 className="text-slate-200 text-center">Coming soon!</h3>
                 </div>
               </Popover.Panel>
             </Transition>
@@ -140,12 +141,12 @@ export default function Header() {
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
+          {/* <a
             href="#"
             className="text-sm font-semibold leading-6 text-slate-300"
           >
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </a> */}
         </div>
       </nav>
       <Dialog
@@ -221,7 +222,7 @@ export default function Header() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...STYLES].map((style) => (
+                        {/* {[...STYLES].map((style) => (
                           <Disclosure.Button
                             key={style.id}
                             as="div"
@@ -229,7 +230,8 @@ export default function Header() {
                           >
                             <Link to={style.path}>{style.name}</Link>
                           </Disclosure.Button>
-                        ))}
+                        ))} */}
+                        <h3 className="text-slate-200">Coming soon!</h3>
                       </Disclosure.Panel>
                     </>
                   )}
@@ -242,12 +244,12 @@ export default function Header() {
                 </Link>
               </div>
               <div className="py-6">
-                <Link
+                {/* <Link
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-300 hover:bg-slate-600"
                 >
                   Log in
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
