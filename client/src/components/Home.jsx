@@ -70,7 +70,7 @@ export default function Home() {
                     <img
                       src={home1}
                       alt=""
-                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-md shadow-slate-400 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all ease-in-out"
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
@@ -80,7 +80,7 @@ export default function Home() {
                     <img
                       src={home2}
                       alt=""
-                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-md shadow-slate-400 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all ease-in-out"
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
@@ -88,7 +88,7 @@ export default function Home() {
                     <img
                       src={home3}
                       alt=""
-                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-md shadow-slate-400 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all ease-in-out"
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
@@ -98,7 +98,7 @@ export default function Home() {
                     <img
                       src={home4}
                       alt=""
-                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-md shadow-slate-400 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all ease-in-out"
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
@@ -106,7 +106,7 @@ export default function Home() {
                     <img
                       src={home5}
                       alt=""
-                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-md shadow-slate-400 hover:scale-105 hover:shadow-lg hover:shadow-slate-400 transition-all ease-in-out"
                     />
                     <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                   </div>
