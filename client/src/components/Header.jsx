@@ -203,18 +203,19 @@ export default function Header() {
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {[...LOCATIONS].map((location) => (
-                          <Disclosure.Button
+                          <Link
                             key={location.id}
-                            as="div"
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
+                            to="/photos"
+                            className="w-full"
                           >
-                            <Link
-                              to="/photos"
+                            <Disclosure.Button
+                              as="div"
                               onClick={() => handleNewLocation(location.name)}
+                              className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
                             >
                               {location.name}
-                            </Link>
-                          </Disclosure.Button>
+                            </Disclosure.Button>
+                          </Link>
                         ))}
                       </Disclosure.Panel>
                     </>
@@ -235,18 +236,15 @@ export default function Header() {
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {[...STYLES].map((style) => (
-                          <Disclosure.Button
-                            key={style.id}
-                            as="div"
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
-                          >
-                            <Link
-                              to="/art"
-                              onClick={() => handleNewArtStyle(style.name)}
+                          <Link key={style.id} to="/photos" className="w-full">
+                            <Disclosure.Button
+                              as="div"
+                              onClick={() => handleNewLocation(style.name)}
+                              className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
                             >
                               {style.name}
-                            </Link>
-                          </Disclosure.Button>
+                            </Disclosure.Button>
+                          </Link>
                         ))}
                       </Disclosure.Panel>
                     </>
