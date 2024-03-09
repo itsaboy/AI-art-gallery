@@ -66,7 +66,7 @@ const generatePreSignedUrls = async (bucketName, imageKeys) => {
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
-app.get("/images", async (req, res) => {
+app.get("/api/images", async (req, res) => {
   try {
     const folderPath = req.query.region + `/`; // Use your actual folder path
     const imageKeys = await listImagesInFolder(BUCKET_NAME, folderPath);
@@ -78,6 +78,10 @@ app.get("/images", async (req, res) => {
     console.error("Error fetching image URLs:", error);
     res.status(500).send("Error fetching image URLs");
   }
+});
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
 app.listen(PORT, () => {

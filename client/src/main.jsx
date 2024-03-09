@@ -23,81 +23,66 @@ const router = createBrowserRouter([
       {
         path: "/photos",
         element: <PicPanel />,
-        errorElement: <Error />,
         children: [
           {
             path: "/photos/china",
             element: <PicPanel />,
-            errorElement: <Error />,
           },
           {
             path: "/photos/colombia",
             element: <PicPanel />,
-            errorElement: <Error />,
           },
           {
             path: "/photos/ireland",
             element: <PicPanel />,
-            errorElement: <Error />,
           },
           {
             path: "/photos/italy",
             element: <PicPanel />,
-            errorElement: <Error />,
           },
           {
             path: "/photos/japan",
             element: <PicPanel />,
-            errorElement: <Error />,
           },
           {
             path: "/photos/portugal",
             element: <PicPanel />,
-            errorElement: <Error />,
           },
           {
             path: "/photos/qatar",
             element: <PicPanel />,
-            errorElement: <Error />,
           },
           {
             path: "/photos/sweden",
             element: <PicPanel />,
-            errorElement: <Error />,
           },
         ],
       },
       {
         path: "/art",
         element: <ArtPanel />,
-        errorElement: <Error />,
         children: [
           {
             path: "/art/inkdrawing",
             element: <ArtPanel />,
-            errorElement: <Error />,
           },
           {
             path: "/art/sumi",
             element: <ArtPanel />,
-            errorElement: <Error />,
           },
           {
             path: "/art/suminagashi",
             element: <ArtPanel />,
-            errorElement: <Error />,
           },
           {
             path: "/art/ukiyo",
             element: <ArtPanel />,
-            errorElement: <Error />,
           },
         ]
       },
       {
         path: "/info",
         element: <Info />,
-        errorElement: <Error />,
       },
     ],
   },
