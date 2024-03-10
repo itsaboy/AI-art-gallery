@@ -20,7 +20,7 @@ export default function Clicked({ isOpen, setIsOpen, imgPath }) {
           <div className="fixed inset-0 bg-slate-950 transition-opacity bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div className="fixed sm:mt-16 inset-0 z-10 w-screen overflow-y-auto">
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
