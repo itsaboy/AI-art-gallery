@@ -18,6 +18,16 @@ export default function Header() {
   const { handleNewLocation } = useContext(AppContext);
   const { handleNewArtStyle } = useContext(AppContext);
 
+  const handleLocationClickMobile = (location) => {
+    setMobileMenuOpen(false);
+    handleNewLocation(location);
+  };
+
+  const handleArtSyleClickMobile = (style) => {
+    setMobileMenuOpen(false);
+    handleNewArtStyle(style);
+  };
+
   return (
     <header className="absolute inset-x-0 top-0 z-50 bg-slate-950">
       <nav
@@ -184,6 +194,7 @@ export default function Header() {
               <div className="space-y-2 py-6">
                 <Link
                   to="/"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-300 hover:bg-slate-600"
                 >
                   Home
@@ -210,7 +221,9 @@ export default function Header() {
                           >
                             <Disclosure.Button
                               as="div"
-                              onClick={() => handleNewLocation(location.name)}
+                              onClick={() =>
+                                handleLocationClickMobile(location.name)
+                              }
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
                             >
                               {location.name}
@@ -239,7 +252,9 @@ export default function Header() {
                           <Link key={style.id} to="/art" className="w-full">
                             <Disclosure.Button
                               as="div"
-                              onClick={() => handleNewArtStyle(style.name)}
+                              onClick={() =>
+                                handleArtSyleClickMobile(style.name)
+                              }
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
                             >
                               {style.name}
@@ -252,6 +267,7 @@ export default function Header() {
                 </Disclosure>
                 <Link
                   to="/info"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-slate-300 hover:bg-slate-600"
                 >
                   Info

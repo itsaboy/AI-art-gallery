@@ -18,39 +18,6 @@ import sumi from "./assets/sumi.webp";
 import suminagashi from "./assets/suminagashi.webp";
 import ukiyo from "./assets/ukiyo.webp";
 
-export const SLIDESHOW = [
-  {
-    id: 1,
-    name: "image one",
-    img: home1,
-    alt: "a photo of a woman in front of a castle",
-  },
-  {
-    id: 2,
-    name: "image one",
-    img: home2,
-    alt: "a photo of a woman in front of a castle",
-  },
-  {
-    id: 3,
-    name: "image one",
-    img: home3,
-    alt: "a photo of a woman in front of a castle",
-  },
-  {
-    id: 4,
-    name: "image one",
-    img: home4,
-    alt: "a photo of a woman in front of a castle",
-  },
-  {
-    id: 5,
-    name: "image one",
-    img: home5,
-    alt: "a photo of a woman in front of a castle",
-  },
-]
-
 export const LOCATIONS = [
   {
     id: 1,
