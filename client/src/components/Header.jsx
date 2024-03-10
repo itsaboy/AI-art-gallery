@@ -239,7 +239,7 @@ export default function Header() {
                           <Link key={style.id} to="/art" className="w-full">
                             <Disclosure.Button
                               as="div"
-                              onClick={() => handleNewLocation(style.name)}
+                              onClick={() => handleNewArtStyle(style.name)}
                               className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
                             >
                               {style.name}
