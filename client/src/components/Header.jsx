@@ -225,7 +225,7 @@ export default function Header() {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-slate-300 hover:bg-slate-600">
-                        Art
+                        Photos
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -236,7 +236,7 @@ export default function Header() {
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {[...STYLES].map((style) => (
-                          <Link key={style.id} to="/photos" className="w-full">
+                          <Link key={style.id} to="/art" className="w-full">
                             <Disclosure.Button
                               as="div"
                               onClick={() => handleNewLocation(style.name)}
