@@ -35,7 +35,7 @@ export default function Clicked({ isOpen, setIsOpen, imgPath }) {
                 <div className="absolute right-0 top-0 pr-4 pt-4">
                   <button
                     type="button"
-                    className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    className="rounded-md bg-transparent text-slate-400 hover:text-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2"
                     onClick={() => setIsOpen(false)}
                   >
                     <span className="sr-only">Close</span>
