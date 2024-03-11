@@ -7,7 +7,7 @@ import {
 export default function Clicked({ isOpen, setIsOpen, imgPath }) {
   return (
     <Transition.Root show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
+      <Dialog as="div" className="relative z-50" onClose={setIsOpen}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -43,7 +43,7 @@ export default function Clicked({ isOpen, setIsOpen, imgPath }) {
                   </button>
                 </div>
                 <div>
-                  <img className="z-50" src={imgPath} />
+                  <img src={imgPath} />
                 </div>
               </Dialog.Panel>
             </Transition.Child>
