@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: "server/.env" });
 import express from "express";
 import path from "path";
 import * as url from "url";

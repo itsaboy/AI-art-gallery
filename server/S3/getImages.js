@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: "server/.env" });
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import {
   S3Client,
