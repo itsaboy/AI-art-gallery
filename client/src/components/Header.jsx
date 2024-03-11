@@ -234,7 +234,7 @@ export default function Header() {
               className="rounded-md bg-blue-200 px-2.5 py-1.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100"
               onClick={() => handleLogoutClick()}
             >
-              Log out
+              <Link to="/">Log out</Link>
             </button>
           )}
           {!user && (
