@@ -43,7 +43,7 @@ export default function Clicked({ isOpen, setIsOpen, imgPath }) {
                   </button>
                 </div>
                 <div>
-                  <img src={imgPath} />
+                  <img className="z-50" src={imgPath} />
                 </div>
               </Dialog.Panel>
             </Transition.Child>
