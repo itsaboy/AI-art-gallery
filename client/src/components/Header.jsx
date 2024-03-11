@@ -384,20 +384,24 @@ export default function Header() {
                 </Link>
               </div>
               <div className="py-6">
-                <Link
-                  to="/"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-blue-400 hover:bg-slate-600"
-                  onClick={() => handleLogoutClick()}
-                >
-                  Log out
-                </Link>
-                <Link
-                  to="/login"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-blue-400 hover:bg-slate-600"
-                >
-                  Log in
-                </Link>
+                {user && (
+                  <Link
+                    to="/"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-blue-400 hover:bg-slate-600"
+                    onClick={() => handleLogoutClick()}
+                  >
+                    Log out
+                  </Link>
+                )}
+                {!user && (
+                  <Link
+                    to="/login"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-blue-400 hover:bg-slate-600"
+                  >
+                    Log in
+                  </Link>
+                )}
               </div>
             </div>
           </div>
