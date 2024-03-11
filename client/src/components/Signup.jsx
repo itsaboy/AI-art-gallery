@@ -26,7 +26,8 @@ export default function Signup() {
                       name="email"
                       type="email"
                       autoComplete="email"
-                      required
+                      // required
+                      disabled
                       className="block w-full rounded-md border-0 py-1.5 text-slate-300 shadow-sm ring-1 ring-inset ring-blue-400 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -45,7 +46,8 @@ export default function Signup() {
                       name="password"
                       type="password"
                       autoComplete="current-password"
-                      required
+                      // required
+                      disabled
                       className="block w-full rounded-md border-0 py-1.5 text-slate-300 shadow-sm ring-1 ring-inset ring-blue-400 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -64,7 +66,8 @@ export default function Signup() {
                       name="retype"
                       type="password"
                       autoComplete="current-password"
-                      required
+                      // required
+                      disabled
                       className="block w-full rounded-md border-0 py-1.5 text-slate-300 shadow-sm ring-1 ring-inset ring-blue-400 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                     />
                   </div>
