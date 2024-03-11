@@ -4,12 +4,13 @@ import LoadingPanel from "./LoadingPanel";
 import Clicked from "./Clicked";
 import { AppContext } from "../context/AppContext";
 import { imageAnimationVariants } from "../data"
+import beach from "../assets/beach.webp"
 
 export default function AnimePanel() {
   const [isOpen, setIsOpen] = useState(false);
   const [imgPath, setImgPath] = useState("");
 
-  const { artStyleSelected, isLoading, currentImages } = useContext(AppContext);
+  const { animeSelected, isLoading, currentImages } = useContext(AppContext);
 
   const handleImageClick = (path) => {
     setImgPath(path);
@@ -21,19 +22,19 @@ export default function AnimePanel() {
       <div className="mx-auto max-w-2xl px-4 sm:px-6 py-6 lg:max-w-7xl lg:px-8">
         <div className="bg-slate-900 mb-6 px-6 py-24 sm:py-32 lg:px-8 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-80 rounded-lg">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="sr-only">{artStyleSelected}</h2>
+            <h2 className="sr-only">{animeSelected}</h2>
             <p className="mt-6 text-lg leading-8 text-slate-200">
-              {artStyleSelected === "None" &&
+              {animeSelected === "None" &&
                 "Choose a category from the Anime dropdown"}
-              {artStyleSelected === "Beach" &&
-                "The brush dances and the ink sings. - Japanese proverb"}
+              {animeSelected === "Beach" &&
+                "The sound of the waves crashing against the shore, it's like a melody that washes away all the sadness."}
             </p>
             <img
-              {...(artStyleSelected === "None" && {
+              {...(animeSelected === "None" && {
                 src: art,
               })}
-              {...(artStyleSelected === "Beach" && {
-                src: inkDrawing,
+              {...(animeSelected === "Beach" && {
+                src: beach,
               })}
               className="absolute inset-0 -z-10 h-full w-full object-cover rounded-lg opacity-10"
             />

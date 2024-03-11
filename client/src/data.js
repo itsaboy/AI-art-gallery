@@ -12,6 +12,8 @@ import sumi from "./assets/sumi.webp";
 import suminagashi from "./assets/suminagashi.webp";
 import ukiyo from "./assets/ukiyo.webp";
 
+import beach from "./assets/beach.webp";
+
 export const LOCATIONS = [
   {
     id: 1,
@@ -89,6 +91,15 @@ export const STYLES = [
     alt: "a ukiyo painting of Mount Fuji",
   },
 ];
+
+export const ANIMES = [
+  {
+    id: 1,
+    name: "Beach",
+    img: beach,
+    alt: "an anime image of the beach",
+  },
+]
 
 export const imageAnimationVariants = {
   initial: {

@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import Home from "./components/Home.jsx";
 import PicPanel from "./components/PicPanel.jsx";
 import ArtPanel from "./components/ArtPanel.jsx";
+import AnimePanel from "./components/AnimePanel.jsx";
 import Info from "./components/Info.jsx";
 import Login from "./components/Login.jsx";
 import Signup from "./components/Signup.jsx";
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
         index: true,
         path: "/art",
         element: <ArtPanel />,
+      },
+      {
+        index: true,
+        path: "/anime",
+        element: <AnimePanel />,
       },
       {
         index: true,

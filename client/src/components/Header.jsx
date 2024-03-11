@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { LOCATIONS, STYLES, imageAnimationVariants } from "../data";
+import { LOCATIONS, STYLES, ANIMES, imageAnimationVariants } from "../data";
 import logo from "../assets/logo.svg";
 import { AppContext } from "../context/AppContext";
 import { useAuthContext } from "../hooks/useAuthContext";
@@ -19,6 +19,7 @@ export default function Header() {
 
   const { handleNewLocation } = useContext(AppContext);
   const { handleNewArtStyle } = useContext(AppContext);
+  const { handleNewAnime } = useContext(AppContext);
 
   const { user } = useAuthContext();
   const { logout } = useLogout();
@@ -31,6 +32,11 @@ export default function Header() {
   const handleArtSyleClickMobile = (style) => {
     setMobileMenuOpen(false);
     handleNewArtStyle(style);
+  };
+
+  const handleAnimeClickMobile = (style) => {
+    setMobileMenuOpen(false);
+    handleNewAnime(style);
   };
 
   const handleLogoutClick = () => {
@@ -163,6 +169,58 @@ export default function Header() {
               </Popover.Panel>
             </Transition>
           </Popover>
+
+          {user && (
+            <Popover>
+              <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-slate-300">
+                Anime
+                <ChevronDownIcon
+                  className="h-5 w-5 flex-none text-slate-300"
+                  aria-hidden="true"
+                />
+              </Popover.Button>
+
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-200"
+                enterFrom="opacity-0 -translate-y-1"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition ease-in duration-150"
+                leaveFrom="opacity-100 translate-y-0"
+                leaveTo="opacity-0 -translate-y-1"
+              >
+                <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-slate-800 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
+                  <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
+                    {ANIMES.map((anime) => (
+                      <div
+                        key={anime.id}
+                        className="group relative rounded-lg p-6 text-sm leading-6 hover:bg-slate-950"
+                      >
+                        <motion.img
+                          src={anime.img}
+                          alt={anime.alt}
+                          variants={imageAnimationVariants}
+                          initial="initial"
+                          whileInView="animate"
+                          viewport={{ once: true }}
+                          className="rounded-lg shadow-lg shadow-slate-950"
+                        />
+                        <Link
+                          to="/anime"
+                          onClick={() => handleNewAnime(anime.name)}
+                          className="mt-6 block font-semibold text-slate-300"
+                        >
+                          {anime.name}
+                          <span className="absolute inset-0" />
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </Popover.Panel>
+              </Transition>
+            </Popover>
+          )}
+
           <Link
             to="/info"
             className="text-sm font-semibold leading-6 text-slate-300"
@@ -284,6 +342,39 @@ export default function Header() {
                     </>
                   )}
                 </Disclosure>
+                {user && (
+                  <Disclosure as="div" className="-mx-3">
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-slate-300 hover:bg-slate-600">
+                          Anime
+                          <ChevronDownIcon
+                            className={classNames(
+                              open ? "rotate-180" : "",
+                              "h-5 w-5 flex-none"
+                            )}
+                            aria-hidden="true"
+                          />
+                        </Disclosure.Button>
+                        <Disclosure.Panel className="mt-2 space-y-2">
+                          {[...ANIMES].map((anime) => (
+                            <Link key={anime.id} to="/anime" className="w-full">
+                              <Disclosure.Button
+                                as="div"
+                                onClick={() =>
+                                  handleAnimeClickMobile(anime.name)
+                                }
+                                className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-slate-200 hover:bg-slate-950"
+                              >
+                                {anime.name}
+                              </Disclosure.Button>
+                            </Link>
+                          ))}
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                )}
                 <Link
                   to="/info"
                   onClick={() => setMobileMenuOpen(false)}
