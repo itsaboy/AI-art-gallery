@@ -43,13 +43,6 @@ export default function Login() {
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                   />
-                  {loginError && (
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                      <ExclamationCircleIcon
-                        className="h-5 w-5 text-red-600"
-                      />
-                    </div>
-                  )}
                 </div>
               </div>
 

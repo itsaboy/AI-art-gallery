@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
 
 import { useSignup } from "../hooks/useSignup";
 
@@ -44,13 +43,6 @@ export default function Signup() {
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                   />
-                  {signupError && (
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                      <ExclamationCircleIcon
-                        className="h-5 w-5 text-red-600"
-                      />
-                    </div>
-                  )}
                 </div>
               </div>
 
