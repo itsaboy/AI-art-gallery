@@ -6,6 +6,8 @@ import Home from "./components/Home.jsx";
 import PicPanel from "./components/PicPanel.jsx";
 import ArtPanel from "./components/ArtPanel.jsx";
 import Info from "./components/Info.jsx";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
 import Error from "./components/Error.jsx";
 import "./index.css";
 
@@ -34,6 +36,16 @@ const router = createBrowserRouter([
         path: "/info",
         element: <Info />,
       },
+      {
+        index: true,
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        index: true,
+        path: "/signup",
+        element: <Signup />,
+      }
     ],
   },
 ]);

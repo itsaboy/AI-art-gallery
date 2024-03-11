@@ -162,9 +162,9 @@ export default function Header() {
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to="/login" className="text-sm font-semibold leading-6 text-blue-400">
             Log in <span aria-hidden="true">&rarr;</span>
-          </a> */}
+          </Link>
         </div>
       </nav>
       <Dialog
@@ -274,12 +274,13 @@ export default function Header() {
                 </Link>
               </div>
               <div className="py-6">
-                {/* <Link
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-slate-300 hover:bg-slate-600"
+                <Link
+                  to="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-blue-400 hover:bg-slate-600"
                 >
                   Log in
-                </Link> */}
+                </Link>
               </div>
             </div>
           </div>
