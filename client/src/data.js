@@ -1,9 +1,3 @@
-import home1 from "./assets/home1.webp";
-import home2 from "./assets/home2.webp";
-import home3 from "./assets/home3.webp";
-import home4 from "./assets/home4.webp";
-import home5 from "./assets/home5.webp";
-
 import china from "./assets/china.webp";
 import colombia from "./assets/colombia.webp";
 import ireland from "./assets/ireland.webp";

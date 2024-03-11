@@ -4,13 +4,8 @@ import LoadingPanel from "./LoadingPanel";
 import Clicked from "./Clicked";
 import { AppContext } from "../context/AppContext";
 import { imageAnimationVariants } from "../data"
-import art from "../assets/art.webp";
-import inkDrawing from "../assets/inkDrawing.webp";
-import sumi from "../assets/sumi.webp";
-import suminagashi from "../assets/suminagashi.webp";
-import ukiyo from "../assets/ukiyo.webp";
 
-export default function PicPanel() {
+export default function AnimePanel() {
   const [isOpen, setIsOpen] = useState(false);
   const [imgPath, setImgPath] = useState("");
 
@@ -29,31 +24,16 @@ export default function PicPanel() {
             <h2 className="sr-only">{artStyleSelected}</h2>
             <p className="mt-6 text-lg leading-8 text-slate-200">
               {artStyleSelected === "None" &&
-                "Choose an art style from the Art dropdown"}
-              {artStyleSelected === "Ink Drawing" &&
+                "Choose a category from the Anime dropdown"}
+              {artStyleSelected === "Beach" &&
                 "The brush dances and the ink sings. - Japanese proverb"}
-              {artStyleSelected === "Sumi" &&
-                "The goal of sumi-e is not merely to reproduce the appearance of the subject, but to capture its soul. - Unknown"}
-              {artStyleSelected === "Suminagashi" &&
-                "The art of Suminagashi is like a conversation with water and ink; it teaches us the beauty of letting go and the serenity of impermanence. - Unknown"}
-              {artStyleSelected === "Ukiyo" &&
-                "The essence of Ukiyo lies in finding joy in the temporary, seeing the profound beauty in the ephemeral nature of our lives. - Unknown"}
             </p>
             <img
               {...(artStyleSelected === "None" && {
                 src: art,
               })}
-              {...(artStyleSelected === "Ink Drawing" && {
+              {...(artStyleSelected === "Beach" && {
                 src: inkDrawing,
-              })}
-              {...(artStyleSelected === "Sumi" && {
-                src: sumi,
-              })}
-              {...(artStyleSelected === "Suminagashi" && {
-                src: suminagashi,
-              })}
-              {...(artStyleSelected === "Ukiyo" && {
-                src: ukiyo,
               })}
               className="absolute inset-0 -z-10 h-full w-full object-cover rounded-lg opacity-10"
             />

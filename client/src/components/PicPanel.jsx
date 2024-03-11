@@ -1,11 +1,9 @@
 import { useState, useContext } from "react";
 import { motion } from "framer-motion";
-
 import LoadingPanel from "./LoadingPanel";
 import Clicked from "./Clicked";
-
-import { AppContext } from "../AppContext";
-
+import { AppContext } from "../context/AppContext";
+import { imageAnimationVariants } from "../data"
 import photos from "../assets/photos.webp";
 import china from "../assets/china.webp";
 import colombia from "../assets/colombia.webp";
@@ -15,23 +13,6 @@ import japan from "../assets/japan.webp";
 import portugal from "../assets/portugal.webp";
 import qatar from "../assets/qatar.webp";
 import sweden from "../assets/sweden.webp";
-
-const imageAnimationVariants = {
-  initial: {
-    opacity: 0,
-    scale: 0.8,
-    y: 20,
-  },
-  animate: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
-    },
-  },
-};
 
 export default function PicPanel() {
   const [isOpen, setIsOpen] = useState(false);

@@ -9,6 +9,7 @@ import Info from "./components/Info.jsx";
 import Login from "./components/Login.jsx";
 import Signup from "./components/Signup.jsx";
 import Error from "./components/Error.jsx";
+import { AuthContextProvider } from "./context/AuthContext.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -45,13 +46,15 @@ const router = createBrowserRouter([
         index: true,
         path: "/signup",
         element: <Signup />,
-      }
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthContextProvider>
+      <RouterProvider router={router} />
+    </AuthContextProvider>
   </React.StrictMode>
 );

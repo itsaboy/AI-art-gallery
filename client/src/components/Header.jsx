@@ -6,7 +6,9 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { LOCATIONS, STYLES, imageAnimationVariants } from "../data";
 import logo from "../assets/logo.svg";
-import { AppContext } from "../AppContext";
+import { AppContext } from "../context/AppContext";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useLogout } from "../hooks/useLogout";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -18,6 +20,9 @@ export default function Header() {
   const { handleNewLocation } = useContext(AppContext);
   const { handleNewArtStyle } = useContext(AppContext);
 
+  const { user } = useAuthContext();
+  const { logout } = useLogout();
+
   const handleLocationClickMobile = (location) => {
     setMobileMenuOpen(false);
     handleNewLocation(location);
@@ -26,6 +31,10 @@ export default function Header() {
   const handleArtSyleClickMobile = (style) => {
     setMobileMenuOpen(false);
     handleNewArtStyle(style);
+  };
+
+  const handleLogoutClick = () => {
+    logout();
   };
 
   return (
@@ -162,9 +171,19 @@ export default function Header() {
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to="/login" className="text-sm font-semibold leading-6 text-blue-400">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+          {user && (
+            <button
+              className="rounded-md bg-blue-200 px-2.5 py-1.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100"
+              onClick={() => handleLogoutClick()}
+            >
+              Log out
+            </button>
+          )}
+          {!user && (
+            <button className="rounded-md bg-blue-200 px-2.5 py-1.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100">
+              <Link to="/login">Log in</Link>
+            </button>
+          )}
         </div>
       </nav>
       <Dialog
@@ -274,6 +293,13 @@ export default function Header() {
                 </Link>
               </div>
               <div className="py-6">
+                <Link
+                  to="/"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-blue-400 hover:bg-slate-600"
+                  onClick={() => handleLogoutClick()}
+                >
+                  Log out
+                </Link>
                 <Link
                   to="/login"
                   onClick={() => setMobileMenuOpen(false)}

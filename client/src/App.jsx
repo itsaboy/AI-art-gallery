@@ -2,12 +2,13 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { AppContext } from "./AppContext";
+import { AppContext } from "./context/AppContext";
 import "./App.css";
 
 function App() {
   const [locationSelected, setLocationSelected] = useState("None");
   const [artStyleSelected, setArtStyleSelected] = useState("None");
+  const [animeSelected, setAnimeSelected] = useState("None");
   const [isLoading, setIsLoading] = useState(true);
   const [currentImages, setCurrentImages] = useState();
   
@@ -31,16 +32,24 @@ function App() {
     getImages(style);
   };
 
+  const handleNewAnime = (anime) => {
+    setIsLoading(true);
+    setAnimeSelected(anime);
+    getImages(anime);
+  };
+
   return (
     <>
       <AppContext.Provider
         value={{
           locationSelected,
           artStyleSelected,
+          animeSelected,
           isLoading,
           currentImages,
           handleNewLocation,
           handleNewArtStyle,
+          handleNewAnime,
           setLocationSelected,
           setArtStyleSelected,
           setCurrentImages,
