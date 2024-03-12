@@ -5,6 +5,11 @@ import validator from "validator";
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   email: {
     type: String,
     required: true,
@@ -16,13 +21,20 @@ const userSchema = new Schema({
   },
 });
 
-userSchema.statics.signup = async function (email, password) {
-  const exists = await this.findOne({ email });
-  if (exists) {
-    throw Error("Email already in use");
+userSchema.statics.signup = async function (username, email, password) {
+  const usernameExists = await this.findOne({ email });
+  const emailExists = await this.findOne({ email });
+  if (emailExists) {
+    throw Error("Email address is already in use");
   }
-  if (!email || !password) {
-    throw Error("Email and password are required");
+  if (usernameExists) {
+    throw Error("Username is already in use");
+  }
+  if (!username || !email || !password) {
+    throw Error("Username, email and password are required");
+  }
+  if (!validator.isLength(username, { min: 8 })) {
+    throw Error("Username must be at least 8 characters long");
   }
   if (!validator.isEmail(email)) {
     throw Error("Invalid email address");
@@ -34,16 +46,16 @@ userSchema.statics.signup = async function (email, password) {
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
-  const user = await this.create({ email, password: hash });
+  const user = await this.create({ username, email, password: hash });
   return user;
 };
 
-userSchema.statics.login = async function (email, password) {
-  if (!email || !password) {
+userSchema.statics.login = async function (username, password) {
+  if (!username || !password) {
     throw Error("All fields are required");
   }
 
-  const user = await this.findOne({ email });
+  const user = await this.findOne({ username });
   if (!user) {
     throw Error("Incorrect email or password");
   }

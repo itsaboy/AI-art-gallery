@@ -240,7 +240,8 @@ export default function Header() {
           {user && (
             <>
               <p className="px-2.5 py-1.5 text-sm font-semibold text-red-200">
-                {user.email}
+                Signed in as{" "}
+                <span className="font-bold text-red-300">{user.username}</span>
               </p>
               <Link
                 className="rounded-md bg-red-200 px-2.5 py-1.5 text-sm font-semibold text-red-600 shadow-sm hover:bg-red-300 hover:ring-1 hover:ring-red-100"
@@ -407,7 +408,10 @@ export default function Header() {
                 {user && (
                   <>
                     <p className="-mx-3 block px-3 py-2 text-base font-semibold text-red-200">
-                      {user.email}
+                      Signed in as{" "}
+                      <span className="font-bold text-red-300">
+                        {user.username}
+                      </span>
                     </p>
                     <Link
                       className="rounded-md bg-red-200 -mx-3 block px-3 py-2 text-base font-semibold text-red-600 shadow-sm hover:bg-red-300 hover:ring-1 hover:ring-red-100"

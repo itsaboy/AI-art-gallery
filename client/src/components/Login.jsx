@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { useLogin } from "../hooks/useLogin";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { login, loginError, loginLoading } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(email, password);
+    await login(username, password);
   }
 
   return (
@@ -23,25 +23,25 @@ export default function Login() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
-          <div className="bg-slate-950 px-6 py-12 shadow-lg sm:rounded-lg sm:px-12 shadow-blue-400/40">
+          <div className="bg-slate-950 px-6 py-12 shadow-lg sm:rounded-2xl sm:px-12 shadow-blue-400/40">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
-                  htmlFor="email"
+                  htmlFor="username"
                   className="block text-sm font-medium leading-6 text-slate-200"
                 >
-                  Email address
+                  Username
                 </label>
                 <div className="mt-2">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
+                    id="username"
+                    name="username"
+                    type="text"
+                    autoComplete="username"
                     required
-                    className="block w-full rounded-md border-0 py-1.5 text-slate-900 shadow-sm ring-1 ring-inset ring-blue-400 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
+                    className="block w-full rounded-md border-0 py-1.5 pl-3 text-slate-900 shadow-sm ring-1 ring-inset ring-blue-400 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                    onChange={(e) => setUsername(e.target.value)}
+                    value={username}
                   />
                 </div>
               </div>

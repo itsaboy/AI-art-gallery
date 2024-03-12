@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import { useSignup } from "../hooks/useSignup";
 
 export default function Signup() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signup, signupError, signupLoading } = useSignup();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await signup(email, password);
+    await signup(username, email, password);
   };
 
   return (
@@ -23,8 +24,29 @@ export default function Signup() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
-          <div className="bg-slate-950 px-6 py-12 shadow-lg sm:rounded-lg sm:px-12 shadow-blue-400/40">
+          <div className="bg-slate-950 px-6 py-12 shadow-lg sm:rounded-2xl sm:px-12 shadow-blue-400/40">
             <form className="space-y-6" onSubmit={handleSubmit}>
+              <div>
+                <label
+                  htmlFor="username"
+                  className="block text-sm font-medium leading-6 text-slate-200"
+                >
+                  Username
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    autoComplete="username"
+                    required
+                    className="block w-full rounded-md border-0 py-1.5 pl-3 text-slate-900 shadow-sm ring-1 ring-inset ring-blue-400 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                    onChange={(e) => setUsername(e.target.value)}
+                    value={username}
+                  />
+                </div>
+              </div>
+
               <div>
                 <label
                   htmlFor="email"
