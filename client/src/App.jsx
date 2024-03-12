@@ -13,7 +13,7 @@ function App() {
   const [currentImages, setCurrentImages] = useState();
   
   const getImages = async (region) => {
-    const req = `https://https://neuralcanvases.com/api/images?region=${region}`;
+    const req = `https://neuralcanvases.com/api/images?region=${region}`;
     const res = await fetch(req);
     const imageList = await res.json();
     setCurrentImages(imageList);
