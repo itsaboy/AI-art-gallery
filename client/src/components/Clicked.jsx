@@ -20,7 +20,7 @@ export default function Clicked({ isOpen, setIsOpen, imgPath }) {
           <div className="fixed inset-0 bg-slate-950 transition-opacity bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20" />
         </Transition.Child>
 
-        <div className="fixed sm:mt-16 inset-0 z-10 w-screen overflow-y-auto">
+        <div className="fixed sm:mt-16 inset-0 z-50 w-screen overflow-visible">
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
@@ -35,7 +35,7 @@ export default function Clicked({ isOpen, setIsOpen, imgPath }) {
                 <div className="absolute right-0 top-0 pr-4 pt-4">
                   <button
                     type="button"
-                    className="rounded-md bg-transparent text-slate-400 hover:text-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2"
+                    className="rounded-md bg-slate-800 text-slate-400 hover:text-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2"
                     onClick={() => setIsOpen(false)}
                   >
                     <span className="sr-only">Close</span>

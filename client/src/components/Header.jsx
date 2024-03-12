@@ -50,9 +50,9 @@ export default function Header() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <div href="#" className="-m-1.5 p-1.5">
+          <div className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img className="h-8 w-auto" src={logo} alt="" />
+            <img className="h-8 w-auto" src={logo} alt="Neural Canvases logo" />
           </div>
         </div>
         <div className="flex lg:hidden">
@@ -230,17 +230,25 @@ export default function Header() {
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           {user && (
-            <button
-              className="rounded-md bg-blue-200 px-2.5 py-1.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100"
-              onClick={() => handleLogoutClick()}
-            >
-              <Link to="/">Log out</Link>
-            </button>
+            <>
+              <p className="px-2.5 py-1.5 text-sm font-semibold text-blue-300">
+                {user.email}
+              </p>
+              <Link
+                className="rounded-md bg-blue-200 px-2.5 py-1.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100"
+                onClick={() => handleLogoutClick()}
+              >
+                Log out
+              </Link>
+            </>
           )}
           {!user && (
-            <button className="rounded-md bg-blue-200 px-2.5 py-1.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100">
-              <Link to="/login">Log in</Link>
-            </button>
+            <Link
+              to="/login"
+              className="rounded-md bg-blue-200 px-2.5 py-1.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100"
+            >
+              Log in
+            </Link>
           )}
         </div>
       </nav>
@@ -385,19 +393,22 @@ export default function Header() {
               </div>
               <div className="py-6">
                 {user && (
-                  <Link
-                    to="/"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-blue-400 hover:bg-slate-600"
-                    onClick={() => handleLogoutClick()}
-                  >
-                    Log out
-                  </Link>
+                  <>
+                    <p className="-mx-3 block px-3 py-2 text-base font-semibold text-blue-300">
+                      {user.email}
+                    </p>
+                    <Link
+                      className="rounded-md bg-blue-200 -mx-3 block px-3 py-2 text-base font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100"
+                      onClick={() => handleLogoutClick()}
+                    >
+                      Log out
+                    </Link>
+                  </>
                 )}
                 {!user && (
                   <Link
                     to="/login"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-blue-400 hover:bg-slate-600"
+                    className="rounded-md bg-blue-200 -mx-3 block px-3 py-2 text-base font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100"
                   >
                     Log in
                   </Link>
