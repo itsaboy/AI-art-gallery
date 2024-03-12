@@ -44,7 +44,11 @@ export default function Header() {
   };
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 bg-slate-950">
+    <header
+      className={`absolute inset-x-0 top-0 z-50 ${
+        !user ? "bg-slate-950" : "bg-red-950"
+      }`}
+    >
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -90,7 +94,11 @@ export default function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 -translate-y-1"
             >
-              <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-slate-800 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
+              <Popover.Panel
+                className={`absolute inset-x-0 top-0 -z-10 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 ${
+                  !user ? "bg-slate-800" : "bg-red-800"
+                }`}
+              >
                 <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                   {LOCATIONS.map((location) => (
                     <div
@@ -231,11 +239,11 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           {user && (
             <>
-              <p className="px-2.5 py-1.5 text-sm font-semibold text-blue-300">
+              <p className="px-2.5 py-1.5 text-sm font-semibold text-red-200">
                 {user.email}
               </p>
               <Link
-                className="rounded-md bg-blue-200 px-2.5 py-1.5 text-sm font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100"
+                className="rounded-md bg-red-200 px-2.5 py-1.5 text-sm font-semibold text-red-600 shadow-sm hover:bg-red-300 hover:ring-1 hover:ring-red-100"
                 onClick={() => handleLogoutClick()}
               >
                 Log out
@@ -259,7 +267,11 @@ export default function Header() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-950 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
+        <Dialog.Panel
+          className={`fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 ${
+            !user ? "bg-slate-950" : "bg-red-950"
+          }`}
+        >
           <div className="flex items-center justify-between">
             <div href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -394,11 +406,11 @@ export default function Header() {
               <div className="py-6">
                 {user && (
                   <>
-                    <p className="-mx-3 block px-3 py-2 text-base font-semibold text-blue-300">
+                    <p className="-mx-3 block px-3 py-2 text-base font-semibold text-red-200">
                       {user.email}
                     </p>
                     <Link
-                      className="rounded-md bg-blue-200 -mx-3 block px-3 py-2 text-base font-semibold text-blue-600 shadow-sm hover:bg-blue-300 hover:ring-1 hover:ring-blue-100"
+                      className="rounded-md bg-red-200 -mx-3 block px-3 py-2 text-base font-semibold text-red-600 shadow-sm hover:bg-red-300 hover:ring-1 hover:ring-red-100"
                       onClick={() => handleLogoutClick()}
                     >
                       Log out
