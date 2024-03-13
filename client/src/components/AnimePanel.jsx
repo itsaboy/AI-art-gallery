@@ -4,6 +4,7 @@ import LoadingPanel from "./LoadingPanel";
 import Clicked from "./Clicked";
 import { AppContext } from "../context/AppContext";
 import { imageAnimationVariants } from "../data";
+import anime from "../assets/anime.webp";
 import beach from "../assets/beach.webp";
 import pool from "../assets/pool.webp";
 
@@ -34,7 +35,7 @@ export default function AnimePanel() {
             </p>
             <img
               {...(animeSelected === "None" && {
-                src: art,
+                src: anime,
               })}
               {...(animeSelected === "Beach" && {
                 src: beach,
