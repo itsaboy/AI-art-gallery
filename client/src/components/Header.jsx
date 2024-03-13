@@ -147,7 +147,11 @@ export default function Header() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 -translate-y-1"
             >
-              <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-slate-800 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
+              <Popover.Panel
+                className={`absolute inset-x-0 top-0 -z-10 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 ${
+                  !user ? "bg-slate-800" : "bg-red-800"
+                }`}
+              >
                 <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                   {STYLES.map((style) => (
                     <div
@@ -197,7 +201,11 @@ export default function Header() {
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 -translate-y-1"
               >
-                <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-slate-800 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
+                <Popover.Panel
+                  className={`absolute inset-x-0 top-0 -z-10 pt-14 shadow-2xl shadow-slate-950 ring-1 ring-gray-900/5 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 ${
+                    !user ? "bg-slate-800" : "bg-red-800"
+                  }`}
+                >
                   <div className="mx-auto grid max-w-7xl grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
                     {ANIMES.map((anime) => (
                       <div
