@@ -63,17 +63,17 @@ export default function PicPanel() {
           <LoadingPanel />
         ) : (
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-            {currentImages.map((location, i) => (
-              <a key={location} className="group">
+            {currentImages.map((style) => (
+              <a key={style} className="group">
                 <div className="aspect-h-16 aspect-w-9 w-full overflow-hidden rounded-lg relative">
                   <motion.img
-                    src={location}
+                    src={style}
                     variants={imageAnimationVariants}
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
                     className="h-full w-full object-cover object-center group-hover:opacity-75 hover:cursor-zoom-in"
-                    onClick={() => handleImageClick(location)}
+                    onClick={() => handleImageClick(style)}
                   />
                 </div>
               </a>

@@ -13,6 +13,7 @@ import suminagashi from "./assets/suminagashi.webp";
 import ukiyo from "./assets/ukiyo.webp";
 
 import beach from "./assets/beach.webp";
+import pool from "./assets/pool.webp";
 
 export const LOCATIONS = [
   {
@@ -97,9 +98,15 @@ export const ANIMES = [
     id: 1,
     name: "Beach",
     img: beach,
-    alt: "an anime image of the beach",
+    alt: "an anime image of a woman at the beach",
   },
-]
+  {
+    id: 2,
+    name: "Pool",
+    img: pool,
+    alt: "an anime image of a woman at the pool",
+  },
+];
 
 export const imageAnimationVariants = {
   initial: {

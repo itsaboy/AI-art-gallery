@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import LoadingPanel from "./LoadingPanel";
 import Clicked from "./Clicked";
 import { AppContext } from "../context/AppContext";
-import { imageAnimationVariants } from "../data"
-import beach from "../assets/beach.webp"
+import { imageAnimationVariants } from "../data";
+import beach from "../assets/beach.webp";
+import pool from "../assets/pool.webp";
 
 export default function AnimePanel() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,6 +29,8 @@ export default function AnimePanel() {
                 "Choose a category from the Anime dropdown"}
               {animeSelected === "Beach" &&
                 "The sound of the waves crashing against the shore, it's like a melody that washes away all the sadness."}
+              {animeSelected === "Pool" &&
+                "Whenever I'm at the pool, I feel like I'm in another world. A world where all my troubles just float away, and all that's left is the clear blue water and me."}
             </p>
             <img
               {...(animeSelected === "None" && {
@@ -35,6 +38,9 @@ export default function AnimePanel() {
               })}
               {...(animeSelected === "Beach" && {
                 src: beach,
+              })}
+              {...(animeSelected === "Pool" && {
+                src: pool,
               })}
               className="absolute inset-0 -z-10 h-full w-full object-cover rounded-lg opacity-10"
             />
@@ -44,17 +50,17 @@ export default function AnimePanel() {
           <LoadingPanel />
         ) : (
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-            {currentImages.map((location, i) => (
-              <a key={location} className="group">
+            {currentImages.map((anime) => (
+              <a key={anime} className="group">
                 <div className="aspect-h-16 aspect-w-9 w-full overflow-hidden rounded-lg relative">
                   <motion.img
-                    src={location}
+                    src={anime}
                     variants={imageAnimationVariants}
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
                     className="h-full w-full object-cover object-center group-hover:opacity-75 hover:cursor-zoom-in"
-                    onClick={() => handleImageClick(location)}
+                    onClick={() => handleImageClick(anime)}
                   />
                 </div>
               </a>

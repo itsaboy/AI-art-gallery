@@ -87,7 +87,7 @@ export default function PicPanel() {
           <LoadingPanel />
         ) : (
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-            {currentImages.map((location, i) => (
+            {currentImages.map((location) => (
               <a key={location} className="group">
                 <div className="aspect-h-16 aspect-w-9 w-full overflow-hidden rounded-lg relative">
                   <motion.img
