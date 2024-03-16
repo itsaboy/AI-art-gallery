@@ -41,9 +41,9 @@ export default function PicPanel() {
               {artStyleSelected === "Ukiyo" &&
                 "The essence of Ukiyo lies in finding joy in the temporary, seeing the profound beauty in the ephemeral nature of our lives. - Unknown"}
               {artStyleSelected === "Watercolor" &&
-                "The art of Suminagashi is like a conversation with water and ink; it teaches us the beauty of letting go and the serenity of impermanence. - Unknown"}
+                "Watercolor is like life. Better get it right the first time - you don't get a second chance! - Sergey Gusev"}
               {artStyleSelected === "Psychedelic" &&
-                "The essence of Ukiyo lies in finding joy in the temporary, seeing the profound beauty in the ephemeral nature of our lives. - Unknown"}
+                "Psychedelic art is an attempt to internalize the external world and externalize the internal world. - Alex Grey"}
             </p>
             <img
               {...(artStyleSelected === "None" && {
