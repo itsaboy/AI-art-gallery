@@ -11,6 +11,8 @@ import inkDrawing from "./assets/inkDrawing.webp";
 import sumi from "./assets/sumi.webp";
 import suminagashi from "./assets/suminagashi.webp";
 import ukiyo from "./assets/ukiyo.webp";
+import psychedelic from "./assets/psychedelic.webp";
+import watercolor from "./assets/watercolor.webp";
 
 import beach from "./assets/beach.webp";
 import pool from "./assets/pool.webp";
@@ -90,6 +92,18 @@ export const STYLES = [
     name: "Ukiyo",
     img: ukiyo,
     alt: "a ukiyo painting of Mount Fuji",
+  },
+  {
+    id: 5,
+    name: "Watercolor",
+    img: watercolor,
+    alt: "a watercolor painting of a galaxy",
+  },
+  {
+    id: 6,
+    name: "Psychedelic",
+    img: psychedelic,
+    alt: "a psychedelic painting of a galaxy",
   },
 ];
 

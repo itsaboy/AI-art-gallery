@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 import LoadingPanel from "./LoadingPanel";
 import Clicked from "./Clicked";
 import { AppContext } from "../context/AppContext";
-import { imageAnimationVariants } from "../data"
+import { imageAnimationVariants } from "../data";
 import art from "../assets/art.webp";
 import inkDrawing from "../assets/inkDrawing.webp";
 import sumi from "../assets/sumi.webp";
 import suminagashi from "../assets/suminagashi.webp";
 import ukiyo from "../assets/ukiyo.webp";
+import psychedelic from "../assets/psychedelic.webp";
+import watercolor from "../assets/watercolor.webp";
 
 export default function PicPanel() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +40,10 @@ export default function PicPanel() {
                 "The art of Suminagashi is like a conversation with water and ink; it teaches us the beauty of letting go and the serenity of impermanence. - Unknown"}
               {artStyleSelected === "Ukiyo" &&
                 "The essence of Ukiyo lies in finding joy in the temporary, seeing the profound beauty in the ephemeral nature of our lives. - Unknown"}
+              {artStyleSelected === "Watercolor" &&
+                "The art of Suminagashi is like a conversation with water and ink; it teaches us the beauty of letting go and the serenity of impermanence. - Unknown"}
+              {artStyleSelected === "Psychedelic" &&
+                "The essence of Ukiyo lies in finding joy in the temporary, seeing the profound beauty in the ephemeral nature of our lives. - Unknown"}
             </p>
             <img
               {...(artStyleSelected === "None" && {
@@ -54,6 +60,12 @@ export default function PicPanel() {
               })}
               {...(artStyleSelected === "Ukiyo" && {
                 src: ukiyo,
+              })}
+              {...(artStyleSelected === "Watercolor" && {
+                src: watercolor,
+              })}
+              {...(artStyleSelected === "Psychedelic" && {
+                src: psychedelic,
               })}
               className="absolute inset-0 -z-10 h-full w-full object-cover rounded-lg opacity-10"
             />
